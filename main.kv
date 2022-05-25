@@ -1,0 +1,66 @@
+#: import utils kivy.utils
+#: include kv/home.kv
+
+
+
+FloatLayout:
+	canvas:
+		Color:
+			rgb: utils.get_color_from_hex('#F2F2F2')
+		Rectangle:
+			size: self.size
+			pos: self.pos
+	
+	
+	ScreenManager:
+		id: screenmanager
+		pos_hint: {'center_x': .5, 'top': 1}
+		size_hint: 1,.9
+		
+		
+		HomePage:
+			id: homepage
+			name: 'homepage'
+	
+	GridLayout:
+		cols: 1
+		pos_hint: {'center_x': .5, 'top': .08}
+		size_hint: .8,.05
+		
+		ImageButton:
+			source: 'img/home.png' if self.state == 'normal' else 'img/homeap.png'
+		
+	
+			
+
+
+#<BannerMov>:
+#	canvas.before:
+#		Color:
+#			rgb: .9,.9,.9,1
+#		RoundedRectangle:
+#			size: self.size
+#			pos: self.pos
+#			radius: [30]
+
+
+<ImgaButtonLabel>:
+	canvas.before:
+		Rectangle:
+			size: self.size
+			pos: self.pos
+			source: 'img/b.png' if self.state == 'normal' else 'img/bap.png'
+
+	
+<BannerMov>:
+	canvas.before:
+		Color:
+			rgba: 0,0,0,.05
+		RoundedRectangle:
+			size: self.size
+			pos: self.pos
+			radius: [20]
+		
+		
+	
+	
